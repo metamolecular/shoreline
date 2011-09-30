@@ -1,0 +1,9 @@
+[submodule "lib/closure.js"]
+	path = lib/closure.js
+	url = git://github.com/metamolecular/closure-library.git
+[submodule "lib/compiler.java"]
+	path = lib/compiler.java
+	url = git://github.com/metamolecular/closure-compiler.git
+[submodule "lib/jasmine.js"]
+	path = lib/jasmine.js
+	url = https://github.com/pivotal/jasmine.git

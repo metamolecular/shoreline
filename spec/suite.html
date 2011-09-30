@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Spec Suite</title>
+  <link rel="stylesheet" type="text/css" href="../lib/jasmine.js/lib/jasmine-core/jasmine.css">
+  <script type="text/javascript" src="../lib/closure.js/closure/goog/base.js"></script>
+  <script type="text/javascript" src="../build/deps.js"></script>
+  <script type="text/javascript" src="../lib/jasmine.js/lib/jasmine-core/jasmine.js"></script>
+  <script type="text/javascript" src="../lib/jasmine.js/lib/jasmine-core/jasmine-html.js"></script>
+  
+  <!-- custom matchers -->
+  <script src="../spec/matchers/be_close.js"></script>
+  
+  <!-- spec files -->
+  
+  <script src="../spec/specs/example_spec.js"></script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+  jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+  jasmine.getEnv().execute();
+</script>
+
+</body>
+</html>
