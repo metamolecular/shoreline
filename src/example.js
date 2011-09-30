@@ -21,6 +21,9 @@ goog.provide('shoreline.Example');
 
 goog.require('goog.ui.Component');
 
+/**
+ * @constructor
+ */
 shoreline.Example = function() {
   goog.base(this);
 };
@@ -35,15 +38,27 @@ shoreline.Example.init = function() {
   instance.render(element);
 };
 
+/**
+ * @inheritDoc
+ */
 shoreline.Example.prototype.createDom = function() {
   this.element_ = goog.dom.createDom('h1', {'class': 'example'});
 };
 
+/**
+ * @inheritDoc
+ */
 shoreline.Example.prototype.enterDocument = function() {
   this.getElement().innerText = 'Welcome to Closure';
 };
 
+/**
+ * A silly function for testing.
+ *
+ * @param {number} first the numerator
+ * @param {number} second the denomenator
+ * @return {number} the quotient of first and second
+ */
 shoreline.Example.prototype.compute = function(first, second) {
   return first / second;
 };
-

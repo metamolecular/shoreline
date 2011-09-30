@@ -66,6 +66,10 @@ Google regularly updates Closure via SVN. To keep current with the latest:
 
 For information on creating and maintaining dependencies through Git, see [Chris Jean's description](http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/). For information on setting up your own Git clone from the Closure SVG, see [Fork and synchronise Google Code Subversion repository into GitHub](http://stackoverflow.com/questions/796991/fork-and-synchronise-google-code-subversion-repository-into-github).
 
+## Authors
+
+-  [Richard Apodaca](http://codemonger.tumblr.com/)
+
 ## Copyright
 
 Copyright (C) 2007-2011 [Metamolecular, LLC](http://metamolecular.com). All rights reserved. Licensed under the MIT License. See the file 'LICENSE' for details.
