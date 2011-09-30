@@ -24,12 +24,15 @@ var child_process = require('child_process');
 var path = require('path');
 var fs = require('fs');
 var exec = child_process.exec;
+var crypto = require('crypto');
+var watcher = require('./lib/watcher.js/watcher.js');
 
 /**
  * Project settings.
  */
 
 var project = 'shoreline';
+var browser = 'Safari';
 var libraryPaths = [
   // insert project source paths, for example:
   // 'foolib.js/src', 'barlib.js/src'
@@ -130,4 +133,19 @@ task('compile', ['prebuild'], function(params) {
     '> ' + build + '/' + project + '.js';
 
     system(command, true);
+}, true);
+
+desc('Refreshes browser whenever a project file changes. OS X only due to AppleScript.');
+task('autotest', [], function(params) {
+  console.log('Watching for changes...');
+  watcher.watch('.', function() {
+    var cmd = 
+      'osascript -e \'' +
+      'tell application "' + browser + '"\n' +
+      '  do JavaScript "window.location.reload()" in front document\n' +
+      'end tell\n' +
+      '\'';
+    
+    system(cmd);
+  });
 }, true);
