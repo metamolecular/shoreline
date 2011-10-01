@@ -49,38 +49,26 @@ var compiler = 'lib/compiler.java/compiler.jar';
  * System Commands
  */
 
-var rmrf = function(dir) {
-  try {
-    if (!path.existsSync(dir)) {
-      fs.rmdirSync(dir);
-    }
-  } catch (err) {
-    console.log(err);
-  }
+var rmrf = function(dir, done) {
+  system('rm -rf ' + dir, done);
 };
 
 var mkdir = function(dir) {
-  try {
-    if (!path.existsSync(dir)) {
-      fs.mkdirSync(dir);
-    }
-  } catch (err) {
-    console.log(err);
-  }
+  system('mkdir -p ' + dir);
 };
 
 var system = function(command) {
+  console.log(command);
+  
   exec(command, function(error, stdout, stderr) {
     if (error) {
-      console.info(error);
-      console.info(error.message);
+      console.log(error);
+      console.log(error.message);
     } else {
       console.info('[SUCCESS]');
     }
     
-    if (stdout) {
-      console.info(stdout);
-    }
+    complete();
   });
 };
 
@@ -106,7 +94,7 @@ task('clean', [], function(params) {
 desc('Creates build directory.');
 task('prebuild', [], function(params) {
   mkdir(build);
-});
+}, true);
 
 desc('Calculates dependencies and writes build/deps.js.');
 task('default', ['prebuild'], function(params) {
@@ -115,13 +103,11 @@ task('default', ['prebuild'], function(params) {
     getPathArguments() +
     '--output_mode deps ' +
     '> ' + build + '/deps.js';
-  system(command, true);
-}, true);
+  system(command);
+});
 
 desc('Compiles a single .js file using advanced optimizations');
 task('compile', ['prebuild'], function(params) {
-  mkdir(build);
-  
   var command =
     'python lib/closure.js/closure/bin/calcdeps.py ' +
     getPathArguments() +
@@ -132,8 +118,8 @@ task('compile', ['prebuild'], function(params) {
     '--compiler_flags="--output_wrapper=' + '(function(){%output%})();" ' +
     '> ' + build + '/' + project + '.js';
 
-    system(command, true);
-}, true);
+    system(command);
+});
 
 desc('Refreshes browser whenever a project file changes. OS X only due to AppleScript.');
 task('autotest', [], function(params) {
@@ -148,4 +134,4 @@ task('autotest', [], function(params) {
     
     system(cmd);
   });
-}, true);
+});
