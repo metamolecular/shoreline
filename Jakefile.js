@@ -24,7 +24,6 @@ var child_process = require('child_process');
 var path = require('path');
 var fs = require('fs');
 var exec = child_process.exec;
-var crypto = require('crypto');
 var watcher = require('./lib/watcher.js/watcher.js');
 
 /**
