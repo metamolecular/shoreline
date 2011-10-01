@@ -46,9 +46,10 @@ Open the file html/index.html in any browser.
 
 ## Dependencies
 
-Shoreline uses these tools in addition to Closure for creating and maintaining large JavaScript projects:
+Shoreline uses these tools in addition to Closure:
 
 -  [Jasmine](http://pivotal.github.com/jasmine/). The Behavior-driven development testing framework for JavaScript. Installed with commands 3 & 4 under **Installation**.
+-  [Node.js](http://nodejs.org/) Server-side JavaScript environment.
 -  [Jake](http://cappuccino.org/discuss/2010/04/28/introducing-jake-a-build-tool-for-javascript/). The JavaScript build system based on Node.js. Installed with command 5 under **Installation**.
 
 ## JavaScript Style
@@ -64,7 +65,7 @@ Google regularly updates Closure via SVN. To keep current with the latest:
 3.  $ git pull
 4.  $ cd ../..
 
-For information on creating and maintaining dependencies through Git, see [Chris Jean's description](http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/). For information on setting up your own Git clone from the Closure SVG, see [Fork and synchronise Google Code Subversion repository into GitHub](http://stackoverflow.com/questions/796991/fork-and-synchronise-google-code-subversion-repository-into-github).
+For information on creating and maintaining dependencies through Git, see [Chris Jean's description](http://chrisjean.com/2009/04/20/git-submodules-adding-using-removing-and-updating/). For information on setting up your own Git clone from the Closure SVN repository, see [Fork and synchronise Google Code Subversion repository into GitHub](http://stackoverflow.com/questions/796991/fork-and-synchronise-google-code-subversion-repository-into-github).
 
 ## Authors
 
