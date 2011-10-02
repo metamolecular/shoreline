@@ -112,7 +112,7 @@ task('compile', ['prebuild'], function(params) {
     getPathArguments() +
     '--compiler_jar ' + compiler + ' ' +
     '--output_mode compiled ' +
-    '--input src/exports.js ' +
+    '--input src/Exports.js ' +
     '--compiler_flags="--compilation_level=ADVANCED_OPTIMIZATIONS" ' +
     '--compiler_flags="--output_wrapper=' + '(function(){%output%})();" ' +
     '> ' + build + '/' + project + '.js';
