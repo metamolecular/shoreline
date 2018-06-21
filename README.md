@@ -48,7 +48,7 @@ Open the file html/index.html in any browser.
 
 Shoreline uses these tools in addition to Closure:
 
--  [Jasmine](http://pivotal.github.com/jasmine/). The Behavior-driven development testing framework for JavaScript. Installed with commands 3 & 4 under **Installation**.
+-  [Jasmine](https://jasmine.github.io/). The Behavior-driven development testing framework for JavaScript. Installed with commands 3 & 4 under **Installation**.
 -  [Node.js](http://nodejs.org/) Server-side JavaScript environment.
 -  [Jake](http://cappuccino.org/discuss/2010/04/28/introducing-jake-a-build-tool-for-javascript/). The JavaScript build system based on Node.js. Installed with command 5 under **Installation**.
 
